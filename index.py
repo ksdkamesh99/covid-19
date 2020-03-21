@@ -1,7 +1,8 @@
 from bs4 import BeautifulSoup
 import requests
 from slacker import Slacker
-from jsons import save,load
+import json
+import jsons as j
 
 extract_contents = lambda row: [x.text.replace('\n', '') for x in row]
 list=[]
@@ -22,7 +23,8 @@ try:
         for i in tds:
             u.append(i.text)
         list.append(u)
-    
+    past=j.load()
+    print(past)
     
 
     
